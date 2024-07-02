@@ -9,7 +9,7 @@ const Game=()=>{
         const current=historyCopy[historyCopy.length-1];
         const squares = [...current];
         if(calculateWinner(squares)|| squares[i]){return;}
-        squares[i]=xlsNext?'X':'O';
+        squares[i]=xlsNext?'✔️':'❌';
         setHistory([...historyCopy,squares]);
         setStepNumber(historyCopy.length);
         setXlsNext(!xlsNext);
@@ -38,6 +38,7 @@ const Game=()=>{
     }
     return(
         <div className="game">
+            <h1 className="heading"> TIC TAC TOE </h1>
             <div className="game-board">
                 <Board squares={current} onClick={handleClick}/>
             </div>
